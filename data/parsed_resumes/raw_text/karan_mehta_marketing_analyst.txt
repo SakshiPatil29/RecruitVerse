@@ -1,0 +1,19 @@
+Karan Mehta
+Marketing Analyst
+
+Email: karan.mehta@example.com | Phone: +91 9911223344
+Summary:
+Marketing analyst with 3 years experience focused on campaign analytics and customer segmentation.
+
+Skills:
+Excel, SQL, Google Analytics, Python, A/B Testing, Statistics, Tableau
+
+Experience:
+Marketing Analyst, BrandWorks Media (2022 - Present)
+- Ran A/B tests on marketing campaigns and reported on lift
+- Built SQL queries to segment customers by behavior
+- Created Tableau dashboards for the marketing leadership team
+- Used Google Analytics to track campaign performance
+
+Education:
+BBA in Marketing, Delhi University (2022)

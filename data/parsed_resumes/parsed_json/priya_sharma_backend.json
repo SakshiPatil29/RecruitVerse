@@ -1,0 +1,17 @@
+{
+    "name": "Priya Sharma",
+    "email": "priya.sharma@example.com",
+    "phone": "+91 9876543210",
+    "skills": [
+        "Python",
+        "PostgreSQL",
+        "REST API",
+        "Docker",
+        "Git",
+        "AWS",
+        "SQL",
+        "FastAPI"
+    ],
+    "education": "B.Tech",
+    "experience_years": 2
+}

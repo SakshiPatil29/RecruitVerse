@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.log
+
+# Large datasets — drop your own copies into these folders (see README).
+data/imports/relational_54k/*.csv
+data/raw_resumes/real/dataset 1/
+data/raw_resumes/synthetic/
+data/knowledge_base/*.pkl
+
+# Model / HF cache
+.cache/

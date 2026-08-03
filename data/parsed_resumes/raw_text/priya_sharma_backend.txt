@@ -1,0 +1,19 @@
+Priya Sharma
+Backend Developer
+
+Email: priya.sharma@example.com | Phone: +91 9876543210
+Summary:
+Backend developer with 2 years of experience building REST APIs and working with relational databases.
+
+Skills:
+Python, FastAPI, PostgreSQL, REST API, Git, Docker, AWS, SQL
+
+Experience:
+Backend Developer, Tech Solutions Pvt Ltd (2023 - Present)
+- Built and maintained REST APIs using FastAPI and Python
+- Designed PostgreSQL schemas for a multi-tenant SaaS product
+- Deployed services to AWS using Docker containers
+- Used Git for version control across a team of 5 engineers
+
+Education:
+B.Tech in Computer Science, Pune University (2023)

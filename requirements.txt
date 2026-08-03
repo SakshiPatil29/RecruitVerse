@@ -1,0 +1,24 @@
+# Core web / UI
+streamlit
+fastapi
+uvicorn
+
+# Parsing
+pymupdf
+python-docx
+pandas
+numpy
+
+# Semantic matching (deterministic scoring)
+sentence-transformers
+
+# AI narrative features (Ollama HTTP client)
+requests
+
+# Optional persistence
+sqlalchemy
+psycopg2-binary
+python-dotenv
+
+# Tests
+pytest

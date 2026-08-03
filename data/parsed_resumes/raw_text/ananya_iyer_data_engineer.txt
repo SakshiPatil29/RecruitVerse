@@ -1,0 +1,19 @@
+Ananya Iyer
+Data Engineer
+
+Email: ananya.iyer@example.com | Phone: +91 9900112233
+Summary:
+Data engineer with 4 years experience building ETL pipelines and working with big data tools.
+
+Skills:
+Python, SQL, Spark, PySpark, Airflow, AWS, S3, Hadoop, Kafka
+
+Experience:
+Data Engineer, CloudScale Systems (2021 - Present)
+- Built ETL pipelines using Airflow and PySpark
+- Managed data lake storage on AWS S3
+- Streamed real-time events using Kafka
+- Optimized Spark jobs for large scale batch processing
+
+Education:
+M.Tech in Data Engineering, IIT Bombay (2021)

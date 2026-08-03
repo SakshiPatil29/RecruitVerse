@@ -1,0 +1,19 @@
+Rahul Verma
+Data Analyst
+
+Email: rahul.verma@example.com | Phone: +91 9812345678
+Summary:
+Data analyst with 3 years experience and a strong background in SQL, Python, and dashboarding tools.
+
+Skills:
+Python, SQL, Excel, Power BI, Tableau, Statistics, Pandas, NumPy
+
+Experience:
+Data Analyst, Insight Analytics (2022 - Present)
+- Wrote complex SQL queries to build reporting datasets
+- Built Power BI dashboards for the sales team
+- Automated data cleaning pipelines using Python and Pandas
+- Presented statistical findings to stakeholders monthly
+
+Education:
+B.Sc in Statistics, Mumbai University (2022)
