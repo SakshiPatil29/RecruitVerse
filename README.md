@@ -1,128 +1,120 @@
-# RecruitVerse ATS
+# RecruitVerse — AI-Powered Resume Screening & Candidate Ranking System (ATS)
 
-An AI-powered **Resume Screening & Candidate Ranking System** that simulates
-a recruiter's hiring workflow: upload a job description, upload a batch of
-resumes, and get an explainable, ranked shortlist — with optional AI-generated
-summaries, hiring recommendations, and interview questions.
+> An intelligent Applicant Tracking System that reads a job description and a batch of resumes, then ranks candidates by **semantic similarity + skill match** — with a clear, explainable reason behind every score.
 
-This is a focused refactor of the original RecruitVerse project: the broad
-HR-suite modules (workflow, governance, monitoring, MLOps, notifications,
-talent intelligence, recommendations) were removed, and the resume-screening
-core was rebuilt around **real semantic matching** and a clean ATS UI.
+Built as the final project for **PGCP Big Data Analytics, CDAC Innovation Park, Pune.**
 
 ---
 
-## The workflow
+## 📌 Overview
+
+Recruiters often receive hundreds of resumes for a single role. Reading them by hand is slow, inconsistent, and hard to justify. **RecruitVerse** automates this: a recruiter uploads one job description and a batch of resumes, and in seconds gets a **ranked, explained shortlist** of candidates.
+
+The core scoring is **deterministic and reproducible** — the same inputs always produce the same score — and every score comes with a transparent breakdown of matched, missing, and additional skills. An optional local LLM adds AI-generated summaries, hiring recommendations, and interview questions, but **never affects the score**.
+
+---
+
+## ✨ Key Features
+
+- **Multi-format parsing** — reads resumes and job descriptions from **PDF, DOCX, and TXT**.
+- **Semantic matching** — uses Sentence-Transformers embeddings and cosine similarity to compare *meaning*, not just keywords.
+- **Explainable weighted scoring** — `Skill Match (50%) + Semantic Similarity (30%) + Experience (20%)`.
+- **Skill gap analysis** — matched / missing / additional skills for every candidate.
+- **Candidate ranking** — sortable shortlist with score breakdowns and visual analytics.
+- **Semantic candidate search** — natural-language search over a resume knowledge base.
+- **AI insights (optional)** — resume summaries, hiring recommendations, and interview questions via a local LLM, with rule-based fallbacks so the app works offline.
+- **Graceful degradation** — runs fully without a database, and without the LLM or embedding model (falls back to a lexical similarity method).
+
+---
+
+## 🧠 How the Match Score Works
+
+The final score is a **deterministic weighted blend** of three components (each scored 0–100):
+
+| Component | Weight | How it's computed |
+|-----------|:------:|-------------------|
+| **Skill Match** | 50% | Fraction of the JD's required skills present in the resume |
+| **Semantic Similarity** | 30% | Cosine similarity between the resume and JD embeddings |
+| **Experience** | 20% | Candidate's years vs the years the JD requires |
+
+```
+Final Score = (0.50 × Skill Match) + (0.30 × Semantic Similarity) + (0.20 × Experience)
+```
+
+> **The AI never decides the score.** Scoring uses only embeddings, cosine similarity, and skill counting — so it's reproducible and defensible. The LLM (Ollama) is used *only* for narrative text (summaries, questions, recommendations).
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| **Language** | Python |
+| **Web UI** | Streamlit |
+| **REST API** | FastAPI + Uvicorn |
+| **Semantic Matching** | Sentence-Transformers (`all-MiniLM-L6-v2`), PyTorch |
+| **NLP / Parsing** | PyMuPDF (PDF), python-docx (DOCX), regular expressions |
+| **Data** | pandas, NumPy |
+| **AI Narrative (optional)** | Ollama (local LLM) |
+| **Persistence (optional)** | PostgreSQL, SQLAlchemy, psycopg2 |
+| **Testing** | pytest |
+
+---
+
+## 🏗️ Architecture
+
+RecruitVerse follows a clean, layered architecture — the UI is separated from the deterministic logic, which is separated from the AI and data layers.
 
 ```
 Job Description  →  Resume Upload  →  Parsing  →  Semantic Matching
-                 →  Skill Extraction  →  Ranking  →  Candidate Analysis
-                 →  Interview Questions  →  Hiring Recommendation
+                 →  Skill Extraction  →  Ranking  →  Explanation & AI Insights
 ```
 
-## How scoring works (and where AI does / doesn't touch it)
-
-The **match score is deterministic** — computed from three components:
-
-| Component            | Weight | Source                                        |
-|----------------------|:------:|-----------------------------------------------|
-| Skill match          |  50%   | JD required-skill coverage                     |
-| Semantic similarity  |  30%   | Sentence-Transformers embeddings (full resume vs full JD) |
-| Experience relevance |  20%   | Candidate years vs required years              |
-
-**Ollama is never used for scoring or ranking.** It powers only the narrative
-features (summaries, strengths/weaknesses, hiring recommendation, interview
-questions, resume tips, JD summary). If Ollama isn't running, every one of
-those features falls back to a deterministic rule-based version, so the app
-stays fully usable with no LLM at all.
-
----
-
-## Quick start (local, no database, no Docker)
-
-```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-streamlit run app.py
 ```
-
-Open http://localhost:8501. The first run downloads the embedding model
-(~90 MB) once.
-
-### With Docker
-
-```bash
-docker compose up app       # Streamlit UI on :8501
-docker compose up api       # FastAPI on :8000 (optional)
-```
-
-### Optional: Ollama for AI features
-
-```bash
-ollama serve
-ollama pull llama3
-```
-Set `OLLAMA_HOST` / `OLLAMA_MODEL` if they differ from the defaults.
-
----
-
-## The eight pages
-
-- **Dashboard** — session overview and quick actions
-- **Job Description** — paste or upload (PDF/DOCX/TXT); extracts required vs preferred skills, experience, education, certifications
-- **Resume Upload** — drag-and-drop multiple resumes with parse status
-- **Candidate Ranking** — sortable ranked table with score breakdown + charts
-- **Candidate Details** — full profile, matched/missing/additional skills, ✓/✗ score explanation, and on-demand AI insights
-- **Candidate Search** — natural-language semantic search
-- **AI Insights** — JD summary and top-candidate AI helpers
-- **Settings** — model/weights/Ollama status; build the knowledge-base index
-
----
-
-## The datasets (backend knowledge base)
-
-Three datasets act as a backend corpus for semantic **Candidate Search** —
-recruiters never browse them directly:
-
-- **Relational 54K** — `data/imports/relational_54k/` (people + skills CSVs)
-- **Real / LiveCareer resumes** — `data/raw_resumes/real/dataset 1/Resume/Resume.csv`
-- **Synthetic 10K** — `data/raw_resumes/synthetic/.../resumes_txt/*.txt`
-
-Because these are large, they aren't bundled here — drop them into the folders
-above (structure preserved), then build the search index:
-
-```bash
-python -m src.knowledge_base.dataset_loader
-# or use the "Build knowledge base index" button on the Settings page
-```
-
-Optional bulk import into PostgreSQL (only with `USE_DATABASE=true`) is
-available via `scripts/ingest_*.py`.
-
----
-
-## Project layout
-
-```
-app.py                     Streamlit entrypoint (routing only)
+app.py                     # Streamlit entry point (routing only)
 src/
-  parser/                  file extraction, resume & JD parsing
-  matching/                embedding_matcher (semantic), skill_matcher
-  ranking/                 scoring_engine, candidate_ranker, analytics
-  explainability/          deterministic ✓/✗ score explanations
-  ai/                      ollama_client + insights (with fallbacks)
-  pipeline/                screening_pipeline (parse→match→score→rank)
-  knowledge_base/          dataset loaders + vector search index
-  retrieval/               unified candidate search
-  ui/                      theme, state, and the 8 pages
-  api/                     FastAPI routes over the same pipeline
-scripts/                   optional dataset ingestion into Postgres
-sql/schema.sql             optional persistence schema
-tests/test_pipeline.py     deterministic core tests
+  parser/                  # file_extractor, resume_parser, jd_parser
+  matching/                # embedding_matcher (semantic), skill_matcher, skill_extractor
+  ranking/                 # scoring_engine, candidate_ranker, analytics
+  explainability/          # deterministic ✓/✗ score explanations
+  ai/                      # ollama_client + insights (with rule-based fallbacks)
+  pipeline/                # screening_pipeline (parse → match → score → rank)
+  knowledge_base/          # dataset loaders + vector search index
+  retrieval/               # candidate search
+  ui/                      # theme, state, and the 8 pages
+  api/                     # FastAPI routes over the same pipeline
+data/                      # skills dictionary + datasets
+sql/schema.sql             # optional PostgreSQL schema
+tests/                     # automated tests
 ```
 
-## Tests
+The app has **8 pages**: Dashboard, Job Description, Resume Upload, Candidate Ranking, Candidate Details, Candidate Search, AI Insights, and Settings.
 
-```bash
-pytest tests/test_pipeline.py
-```
+---
+
+## 🔮 Future Scope
+
+- Bias & fairness auditing for equitable screening
+- Vector database (FAISS / pgvector) to scale search to millions of resumes
+- ATS / job-board integrations (LinkedIn, Naukri, Greenhouse)
+- Fine-tuned domain-specific embedding models
+- OCR support for scanned-image resumes
+- Authentication & multi-tenant SaaS deployment
+
+---
+
+## 👥 Team
+
+Developed by a team of 5 as the final project for **PGCP Big Data Analytics, CDAC Innovation Park, Pune.**
+
+- Sakshi Patil
+- Rupali Kale
+- Atishee Jain
+- Vijaya Nanaware
+- Ridhi Jain
+
+---
+
+## 📄 License
+
+This project was created for academic purposes as part of the CDAC PGCP-BDA program.
