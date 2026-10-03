@@ -1,0 +1,15 @@
+Job Title: Backend Developer
+
+We are looking for a Backend Developer with knowledge of Python, FastAPI, SQL, PostgreSQL, REST APIs, Git, and cloud deployment.
+
+Responsibilities:
+- Build APIs
+- Connect backend with databases
+- Handle authentication and business logic
+- Deploy backend applications
+
+Required Skills:
+Python, FastAPI, PostgreSQL, REST API, Git, Docker, AWS
+
+Experience:
+1 to 3 years

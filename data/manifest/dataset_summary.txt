@@ -1,0 +1,17 @@
+RecruitVerse Dataset Audit Summary
+===================================
+
+Total files found: 22494
+
+Files by type:
+- pdf: 12484
+- txt: 10005
+- json: 2
+- py: 1
+- csv: 1
+- jsonl: 1
+
+Files by source:
+- real_pdf_dataset: 2484
+- synthetic_dataset: 20006
+- job_descriptions: 4

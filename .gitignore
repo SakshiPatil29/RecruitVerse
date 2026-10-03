@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Secrets and local config
+.env
+
+# Editor / tooling
+.claude/
+.vscode/
+.idea/
+
+# Generated at runtime (rebuild with python -m src.knowledge_base.dataset_loader)
+data/knowledge_base/
+
+# Large datasets are not committed; see data/imports/README.md
+data/imports/relational_54k/*.csv

@@ -1,0 +1,15 @@
+Job Title: Data Engineer
+
+We are looking for a Data Engineer with knowledge of Python, SQL, Hadoop, Spark, Hive, AWS, and ETL pipelines.
+
+Responsibilities:
+- Build data pipelines
+- Work with big data systems
+- Process large datasets using Spark
+- Store and query data using Hive and SQL
+
+Required Skills:
+Python, SQL, Hadoop, Spark, Hive, PySpark, AWS, Airflow
+
+Experience:
+1 to 3 years

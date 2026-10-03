@@ -1,0 +1,16 @@
+{
+    "name": "Karan Mehta",
+    "email": "karan.mehta@example.com",
+    "phone": "+91 9911223344",
+    "skills": [
+        "Python",
+        "Statistics",
+        "Tableau",
+        "Excel",
+        "Leadership",
+        "SQL",
+        "Google Analytics"
+    ],
+    "education": "BBA",
+    "experience_years": 3
+}

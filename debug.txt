@@ -1,0 +1,124 @@
+Basic Information
+----------------------------------------------------------------------------------------------------------------------------------------------
+Name
+: Vijaya Prakash Nanaware
+CCPP ID
+: Not Assigned
+Course
+: PG-DBDA,Feb26
+Address
+: Akulgoan,Tal-Madha,Dist-Solapur, Pune, MAHARASHTRA
+Work Details
+----------------------------------------------------------------------------------------------------------------------------------------------
+Company Name
+Designation
+IT Related
+From
+To
+Nature of Work
+Tata Consultancy Services Insurance Associate
+No
+08/09/2023 25/07/2025 Processed insurance policies verified
+documents updated customer records and
+handled policy servicing activities. Performed
+quality checks resolved discrepancies
+maintained data accuracy and ensured timely
+completion of tasks as per SLA requirements.
+Academic Details
+----------------------------------------------------------------------------------------------------------------------------------------------
+Level
+Stream
+Institute
+Board/University
+Passing Year Degree %
+Division
+MSc
+Statistics
+Modern College of Arts
+Science and commerce
+college pune
+Savitribai Phule Pune
+University
+2025
+58.15 %
+II
+BSc
+Statistics
+Vidya Pratishthans Arts
+Commerce College ,Baramati
+Savitribai Phule Pune
+University
+2022
+77.73 %
+I
+XII
+Mathematics
+Vidya Pratishthans Arts
+Commerce College ,Baramati
+Maharashtra
+2019
+63.23 %
+I
+X
+General
+Nutan Vidyalaya
+Highschool,Kurduwadi
+Maharashtra
+2017
+85.8 %
+I
+Academic Projects
+----------------------------------------------------------------------------------------------------------------------------------------------
+Title
+: RecruitVerse - AI Resume Screening & Candidate Ranking System
+Platform
+: Python, Streamlit, Sentence-Transformers,
+NLP, pandas, FastAPI, PostgreSQL
+Duration : 1 Month
+Description
+: RecruitVerse is an AI-powered Applicant Tracking System (ATS) that automates resume screening and candidate
+ranking. Recruiters upload a job description and resumes (PDF, DOCX, or TXT), and the system extracts skills,
+experience, education, and projects into structured data. It ranks candidates using Natural Language Processing
+(NLP) and Machine Learning. Semantic similarity is computed using Sentence-Transformers embeddings and
+cosine similarity, enabling meaning-based matching instead of keyword matching. The final score is a weighted
+combination of skill match (50%), semantic similarity (30%), and experience relevance (20%), with an explainable
+breakdown of matched, missing, and additional skills. The system also generates candidate summaries, hiring
+recommendations, interview questions, and semantic resume search. Built with Python and Streamlit, it provides a
+recruiter-friendly interface for faster, consistent, and transparent hiring.
+Project Repository
+: https://github.com/vijayananaware1608-lang/RecruitVerse.git
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Title
+: Prediction and Estimation of rainfall through various statistical approaches
+Platform
+: Statistical & Machine Learning
+Techniques,R Programming,Microsoft
+Excel
+Duration : 4 Months
+Description
+: Developed a rainfall prediction system using historical meteorological data from NASA Earth Science datasets
+(20162022). Performed data preprocessing, correlation analysis, feature selection, and predictive modeling using
+Multiple Linear Regression, Polynomial Regression, ARIMA, SARIMA, Logistic Regression, CART, and Random
+Forest algorithms. Applied Stepwise Regression for variable selection and evaluated model performance using
+RMSE, MAE, and R metrics. The project aimed to improve rainfall forecasting accuracy for applications in
+agriculture, water resource management, and disaster preparedness.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Other Information
+----------------------------------------------------------------------------------------------------------------------------------------------
+LinkedIn
+: www.linkedin.com/in/vijaya-nanaware-122a50377
+Hobbies
+: Exploring New Places ,Cooking
+Personal Information
+----------------------------------------------------------------------------------------------------------------------------------------------
+Date of Birth
+: 08/10/2001
+Gender : Female
+Nationality
+: India
+Languages Known : English,Hindi,Marathi
+ I hereby declare that the information given above is true to the best of my Information knowledge belief.
+Date
+:
+Signature :
+ P_DI_08

@@ -1,0 +1,27 @@
+# Core web / UI
+streamlit
+fastapi
+uvicorn
+
+# Parsing
+pymupdf
+python-docx
+pandas
+numpy
+
+# Semantic matching (deterministic scoring)
+sentence-transformers
+faiss-cpu
+
+# AI narrative features (Groq API client)
+groq
+requests
+
+# Optional persistence + vector search (PostgreSQL / pgvector)
+sqlalchemy
+psycopg2-binary
+pgvector
+python-dotenv
+
+# Tests
+pytest

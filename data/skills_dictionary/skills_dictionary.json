@@ -1,0 +1,45 @@
+{
+  "programming_languages": [
+    "Python", "Java", "C", "C++", "JavaScript", "TypeScript", "R", "Scala", "SQL"
+  ],
+  "databases": [
+    "MySQL", "PostgreSQL", "MongoDB", "Cassandra", "Oracle", "SQLite", "SQL Server"
+  ],
+  "big_data": [
+    "Hadoop", "HDFS", "MapReduce", "Hive", "HBase", "Spark", "PySpark", "Kafka", "Airflow"
+  ],
+  "cloud": [
+    "AWS", "Azure", "Google Cloud", "EC2", "S3", "Lambda", "RDS", "Azure VM", "Azure Data Factory"
+  ],
+  "data_science": [
+    "Machine Learning", "Deep Learning", "NLP", "Computer Vision", "Statistics",
+    "Regression", "Classification", "Clustering", "PCA", "Time Series"
+  ],
+  "python_libraries": [
+    "Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn", "TensorFlow",
+    "PyTorch", "Keras", "BeautifulSoup", "Scrapy", "Plotly"
+  ],
+  "bi_tools": [
+    "Power BI", "Tableau", "Excel", "Google Looker Studio"
+  ],
+  "web_backend": [
+    "FastAPI", "Flask", "Django", "REST API", "Node.js", "Express.js"
+  ],
+  "frontend_ui": [
+    "HTML", "CSS", "React", "Angular", "Vue.js", "Figma", "Bootstrap", "Tailwind CSS"
+  ],
+  "business_marketing_sales": [
+    "Digital Marketing", "SEO", "SEM", "Google Analytics", "CRM", "Salesforce",
+    "Lead Generation", "Market Research", "Content Marketing", "Social Media Marketing"
+  ],
+  "operations_bpo_support": [
+    "Customer Support", "BPO", "Operations Management", "Process Improvement",
+    "Ticketing Tools", "Communication", "MS Office"
+  ],
+  "devops_tools": [
+    "Git", "GitHub", "GitLab", "Docker", "Linux", "Shell Scripting", "Jenkins"
+  ],
+  "soft_skills": [
+    "Communication", "Leadership", "Problem Solving", "Teamwork", "Analytical Thinking"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Rahul Verma",
+    "email": "rahul.verma@example.com",
+    "phone": "+91 9812345678",
+    "skills": [
+        "Python",
+        "Pandas",
+        "Statistics",
+        "Tableau",
+        "Excel",
+        "Power BI",
+        "SQL",
+        "NumPy"
+    ],
+    "education": "B.Sc",
+    "experience_years": 3
+}

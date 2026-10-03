@@ -1,0 +1,30 @@
+# Pin the base theme.
+#
+# src/ui/theme.py paints light surfaces (white sidebar, #f8fafc canvas) but
+# does not restyle body text. Without this file Streamlit follows the OS /
+# browser dark-mode preference, keeps its near-white text, and every label,
+# caption, alert and error traceback renders white-on-white — the app looks
+# like nothing happened when in fact it worked. Pinning base="light" keeps
+# Streamlit's own palette in step with the injected CSS on every machine.
+[theme]
+base = "light"
+primaryColor = "#2563eb"
+backgroundColor = "#f8fafc"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#0f172a"
+
+[server]
+headless = true
+
+# Disable the source-file watcher.
+#
+# Streamlit's LocalSourcesWatcher walks every module in sys.modules on each
+# rerun and reads `module.__path__._path`. On torch/transformers (pulled in
+# by sentence-transformers) that touches thousands of lazily-imported
+# submodules, each of which fails on Windows with a c10.dll error and costs
+# ~1s — the app stops responding entirely and the terminal fills with
+# "Examining the path of transformers.models... raised" warnings.
+# server.folderWatchBlacklist does not help: it filters paths *after* the
+# extraction that stalls. Trade-off: edits to .py files no longer trigger an
+# auto-rerun, so restart `streamlit run app.py` after changing code.
+fileWatcherType = "none"
